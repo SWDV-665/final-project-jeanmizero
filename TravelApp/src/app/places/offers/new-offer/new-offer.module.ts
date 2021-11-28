@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+// import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -11,10 +12,11 @@ import { NewOfferPage } from './new-offer.page';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
+    // FormsModule,
     IonicModule,
-    NewOfferPageRoutingModule
+    ReactiveFormsModule,
+    NewOfferPageRoutingModule,
   ],
-  declarations: [NewOfferPage]
+  declarations: [NewOfferPage],
 })
 export class NewOfferPageModule {}

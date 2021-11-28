@@ -3,7 +3,12 @@
         <ion-title>Place to Stay / East Africa</ion-title>
     </ion-toolbar>
 </ion-header>
-<ion-content class="ion-padding">
+<ion-content padding>
+    <!-- Segment -->
+    <ion-segment value="all" (ionChange)="onFilterUpdate($event)">
+        <ion-segment-button checked>All Places</ion-segment-button>
+        <ion-segment-button>Bookable Places</ion-segment-button>
+    </ion-segment>
     <ion-grid>
         <ion-row>
             <!-- Add first card -->

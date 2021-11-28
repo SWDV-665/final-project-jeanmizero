@@ -13,21 +13,27 @@ export class PlacesService {
       'Bisate Lodge - Rwanda',
       'Bisate Lodge is located in the natural amphitheater of an eroded volcanic cone – in Kinyarwanda, the word bisate means ‘pieces’ describing how the once-whole cone was worn away by natural erosion',
       'https://mybestplace.com/uploads/2020/12/Bisate-Lodge-Rwanda-Africa-COVER.jpg',
-      1499
+      1499,
+      new Date('2021-01-01'),
+      new Date('2021-12-31')
     ),
     new Place(
       'p2',
       "Cottar's Safaris",
       'Cottar’s Bush Villa - Kenya',
       'https://lh3.googleusercontent.com/proxy/59txRJvR4Vfm6sPQ4qs9ZhZanFXl0L6ERgfFIwHsJZMDsBQWQ6bNO0YP-JZgNJBWPjnfH1SzmjyuI_CUJt5mY8Wab35Dpx7gjRl4vv--Sl63h47nqSCgBW4KDZL8CVt2qaizCOqnCZEFghwgJnYEAGOWKFdh3rc=w592-h404-n-k-rw-no-v1',
-      1899
+      1899,
+      new Date('2021-01-01'),
+      new Date('2021-12-31')
     ),
     new Place(
       'p3',
       'The Foggy Palace',
       'Ngorongoro Crater Lodge - Tanzania',
       'https://lh3.googleusercontent.com/p/AF1QipNyTkbN9VCTMTUnCzHHWSJ6hBDfbftQB76314A=w592-h404-n-k-rw-no-v1',
-      2499
+      2499,
+      new Date('2021-01-01'),
+      new Date('2021-12-31')
     ),
   ];
 
