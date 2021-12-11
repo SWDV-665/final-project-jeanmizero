@@ -5,9 +5,15 @@ import { Injectable } from '@angular/core';
 })
 export class SplashScreenService {
   private _userIsAuthenticated = true;
+  // Add userId
+  private _userId = 'xyz';
 
   get userIsAuthenticated() {
     return this._userIsAuthenticated;
+  }
+  // Add getter
+  get userId() {
+    return this._userId;
   }
 
   constructor() {}
