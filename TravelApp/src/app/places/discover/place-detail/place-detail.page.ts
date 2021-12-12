@@ -139,13 +139,7 @@ export class PlaceDetailPage implements OnInit {
         }
       });
   }
-
-  ngOnDestroy() {
-    if (this.placeSub) {
-      this.placeSub.unsubscribe();
-    }
-  }
-
+  // onShowFullMap();
   onShowFullMap() {
     this.modalCtrl
       .create({
@@ -157,11 +151,17 @@ export class PlaceDetailPage implements OnInit {
           },
           selectable: false,
           closeButtonText: 'Close',
-          title: this.place.location.address,
+          title: this.place.location.addressLocation,
         },
       })
       .then((modalEl) => {
         modalEl.present();
       });
+  }
+
+  ngOnDestroy() {
+    if (this.placeSub) {
+      this.placeSub.unsubscribe();
+    }
   }
 }
