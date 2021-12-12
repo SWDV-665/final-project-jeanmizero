@@ -11,10 +11,11 @@ import { SplashScreenService } from '../../splash-screen/splash-screen.service';
   templateUrl: './discover.page.html',
   styleUrls: ['./discover.page.scss'],
 })
-export class DiscoverPage implements OnInit {
+export class DiscoverPage implements OnInit, OnDestroy {
   loadedPlaces: Place[];
-  relevantPlaces: Place[];
   listedLoadedPlaces: Place[];
+  relevantPlaces: Place[];
+  isLoading = false;
   private placesSub: Subscription;
 
   constructor(
@@ -31,6 +32,13 @@ export class DiscoverPage implements OnInit {
     });
     //
   }
+  ionViewWillEnter() {
+    this.isLoading = true;
+    this.placesService.fetchPlaces().subscribe(() => {
+      this.isLoading = false;
+    });
+  }
+
   onOpenMenu() {
     this.menuCtrl.toggle();
   }

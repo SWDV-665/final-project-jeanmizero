@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class SplashScreenService {
   private _userIsAuthenticated = true;
   // Add userId
-  private _userId = 'xyz';
+  private _userId = 'abc';
 
   get userIsAuthenticated() {
     return this._userIsAuthenticated;
