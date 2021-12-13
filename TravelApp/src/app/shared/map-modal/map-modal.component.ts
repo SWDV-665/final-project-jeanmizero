@@ -38,7 +38,9 @@ export class MapModalComponent implements OnInit, AfterViewInit, OnDestroy {
         this.googleMaps = googleMaps;
         const mapEl = this.mapElementRef.nativeElement;
         const map = new googleMaps.Map(mapEl, {
-          center: this.center,
+          // 39.419220, -111.950684.
+          center: { lat: 39.41922, lng: -111.950684 },
+          // center: this.center,
           zoom: 16,
         });
 
@@ -94,6 +96,7 @@ export class MapModalComponent implements OnInit, AfterViewInit, OnDestroy {
       document.body.appendChild(script);
       script.onload = () => {
         const loadedGoogleModule = win.google;
+        //
         if (loadedGoogleModule && loadedGoogleModule.maps) {
           resolve(loadedGoogleModule.maps);
         } else {

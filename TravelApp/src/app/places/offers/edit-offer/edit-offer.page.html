@@ -3,7 +3,7 @@
         <ion-buttons slot="start">
             <ion-back-button [defaultHref]="'/places/tabs/offers/' + placeId"></ion-back-button>
         </ion-buttons>
-        <ion-title>Edit Offer</ion-title>
+        <ion-title>Edit your Booking</ion-title>
         <!-- Button -->
         <ion-buttons slot="primary">
             <ion-button (click)="onUpdateOffer()" [disabled]="!form?.valid">
@@ -15,9 +15,9 @@
 
 <ion-content class="ion-padding">
     <form [formGroup]="form" *ngIf="!isLoading" text-center>
-      <div *ngIf="isLoading">
-        <ion-spinner color="primary"></ion-spinner>
-      </div>
+        <div *ngIf="isLoading">
+            <ion-spinner color="primary"></ion-spinner>
+        </div>
         <ion-grid>
             <ion-row>
                 <ion-col size-sm="6" offset-sm="3">
