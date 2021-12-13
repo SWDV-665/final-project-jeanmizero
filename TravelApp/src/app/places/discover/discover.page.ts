@@ -25,13 +25,13 @@ export class DiscoverPage implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.placesService.places.subscribe((places) => {
+    this.placesSub = this.placesService.places.subscribe((places) => {
       this.loadedPlaces = places;
       this.relevantPlaces = this.loadedPlaces;
       this.listedLoadedPlaces = this.relevantPlaces.slice(1);
     });
-    //
   }
+
   ionViewWillEnter() {
     this.isLoading = true;
     this.placesService.fetchPlaces().subscribe(() => {
@@ -43,17 +43,18 @@ export class DiscoverPage implements OnInit, OnDestroy {
     this.menuCtrl.toggle();
   }
 
-  onFilterUpdate(event: CustomEvent<SegmentChangeEventDetail>) {
-    // console.log(event.detail);
-    if (event.detail.value === 'all') {
-      this.relevantPlaces = this.loadedPlaces;
-      this.listedLoadedPlaces = this.relevantPlaces.slice(1);
-    } else {
-      this.relevantPlaces = this.loadedPlaces.filter(
-        (place) => place.userId !== this.splashScreenService.userId
-      );
-      this.listedLoadedPlaces = this.relevantPlaces.slice(1);
-    }
+  segmentChanged(event: Event) {
+    const customEvent = event as CustomEvent<SegmentChangeEventDetail>;
+    console.log(customEvent.detail);
+    // if (Event.detail.value === 'all') {
+    //   this.relevantPlaces = this.loadedPlaces;
+    //   this.listedLoadedPlaces = this.relevantPlaces.slice(1);
+    // } else {
+    //   this.relevantPlaces = this.loadedPlaces.filter(
+    //     (place) => place.userId !== this.splashScreenService.userId
+    //   );
+    //   this.listedLoadedPlaces = this.relevantPlaces.slice(1);
+    // }
   }
 
   ngOnDestroy() {

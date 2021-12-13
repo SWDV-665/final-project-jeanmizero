@@ -9,7 +9,8 @@
 
 <ion-content class="ion-padding">
     <!-- Segment -->
-    <ion-segment (ionChange)="onFilterUpdate($event)" value="all">
+    <!-- (ionChange)="onFilterUpdate($event)" value="all" -->
+    <ion-segment (ionChange)="segmentChanged($event)">
         <ion-segment-button value="all" checked>All Rooms</ion-segment-button>
         <ion-segment-button>Available Hotels</ion-segment-button>
     </ion-segment>
